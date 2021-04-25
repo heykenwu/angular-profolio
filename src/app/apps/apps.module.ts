@@ -22,6 +22,8 @@ import { BannerNavigationComponent } from './shared/banner-navigation/banner-nav
 import { FooterComponent } from './shared/footer/footer.component';
 import { BlogFeaturesComponent } from './blog/blog-features/blog-features/blog-features.component';
 import { BlogFeaturesRightComponent } from './blog/blog-features-right/blog-features-right.component';
+import { WorkComponent } from './work/work.component';
+import { ViewerComponent } from './viewer/viewer.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { BlogFeaturesRightComponent } from './blog/blog-features-right/blog-feat
     FooterComponent,
     BlogFeaturesComponent,
     BlogFeaturesRightComponent,
+    WorkComponent,
+    ViewerComponent,
   ],
   imports: [
     CommonModule,

@@ -11,7 +11,6 @@ export class AboutComponent {
 
   constructor(public service:ServiceblogService) {
     this.service.showEdit=false;
-    
   }
 
 }

@@ -3,10 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { BlogComponent } from './blog/blog.component';
 import { AboutComponent } from './about/about.component';
+import { WorkComponent } from './work/work.component';
 import { BlogDetailComponent } from './blog/blog-detail/blog-detail.component';
-import { BlogFeaturesComponent } from './blog/blog-features/blog-features/blog-features.component';
-import { BlogFeaturesRightComponent } from './blog/blog-features-right/blog-features-right.component';
-
+import { ViewerComponent } from './viewer/viewer.component';
 import { FullComponent } from './layout/full/full.component';
 
 
@@ -18,6 +17,9 @@ const routes: Routes = [
       { path: '', component: BlogComponent },
       { path: 'blogDetail/:id', component: BlogDetailComponent },
       { path: 'about', component: AboutComponent },
+      { path: 'work', component: WorkComponent },
+      { path: 'viewer', component: ViewerComponent },
+
     ]
   }
 ];
