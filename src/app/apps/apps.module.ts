@@ -24,7 +24,9 @@ import { BlogFeaturesComponent } from './blog/blog-features/blog-features/blog-f
 import { BlogFeaturesRightComponent } from './blog/blog-features-right/blog-features-right.component';
 import { WorkComponent } from './work/work.component';
 import { ViewerComponent } from './viewer/viewer.component';
-
+import { MatCardModule } from '@angular/material/card';
+import { CardPjComponent } from './work/card-pj/card-pj.component';
+import {MatButtonModule} from '@angular/material/button';
 @NgModule({
   declarations: [
     AppsComponent,
@@ -42,6 +44,7 @@ import { ViewerComponent } from './viewer/viewer.component';
     BlogFeaturesRightComponent,
     WorkComponent,
     ViewerComponent,
+    CardPjComponent,
   ],
   imports: [
     CommonModule,
@@ -50,6 +53,8 @@ import { ViewerComponent } from './viewer/viewer.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [ServiceblogService],
 })
