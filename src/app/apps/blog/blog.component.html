@@ -27,8 +27,8 @@
 
 <!-- Row  -->
 <div class="container spacer">
+  <!--
   <div class="row justify-content-center">
-    <!-- Column -->
     <div class="col-md-8 no-trans text-center">
       <h2 class="title">Recent Blogs</h2>
       <h6 class="subtitle">
@@ -36,10 +36,8 @@
         services will be great experience for you without doubt and in no-time
       </h6>
     </div>
-    <!-- Column -->
   </div>
   <div class="row m-t-40 justify-content-center">
-    <!-- Column -->
     <div
       class="col-md-8 no-trans border-bottom mb-4"
       *ngFor="let bl of service.Blogs"
@@ -69,5 +67,9 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> //-->
+  <app-blog-features></app-blog-features>
+  <app-blog-features-right></app-blog-features-right>
+  <app-blog-features></app-blog-features>
+  <app-blog-features-right></app-blog-features-right>
 </div>
