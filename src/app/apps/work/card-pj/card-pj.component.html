@@ -2,19 +2,15 @@
     <!-- Column -->
     <div class="col-md-4 wrap-feature1-box" *ngFor='let relay of relayOn'>
         <mat-card class="example-card">
-            <img mat-card-image src="../assets/images/project/nfc.jpg" alt="Photo of a Shiba Inu">
+            <img mat-card-image src="{{relay.image}}" alt="Photo of a Shiba Inu">
             <mat-card-header>
-              <mat-card-title>NFC</mat-card-title>
+              <mat-card-title>{{relay.title}}</mat-card-title>
             </mat-card-header>
             <mat-card-content>
-              <p>
-                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                bred for hunting.
-              </p>
+              <p>{{relay.fieldText}}</p>
             </mat-card-content>
             <mat-card-actions align="end">
-              <button mat-button>Read more</button>
+                <a [routerLink]="[relay.link]"><button mat-raised-button color="primary">Read more</button></a>
             </mat-card-actions>
           </mat-card>
     </div>

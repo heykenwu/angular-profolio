@@ -27,6 +27,7 @@ import { ViewerComponent } from './viewer/viewer.component';
 import { MatCardModule } from '@angular/material/card';
 import { CardPjComponent } from './work/card-pj/card-pj.component';
 import {MatButtonModule} from '@angular/material/button';
+import { NfcBoxComponent } from './projects/nfc-box/nfc-box.component';
 @NgModule({
   declarations: [
     AppsComponent,
@@ -45,6 +46,7 @@ import {MatButtonModule} from '@angular/material/button';
     WorkComponent,
     ViewerComponent,
     CardPjComponent,
+    NfcBoxComponent,
   ],
   imports: [
     CommonModule,

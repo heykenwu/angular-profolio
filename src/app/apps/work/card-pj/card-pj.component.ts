@@ -9,19 +9,22 @@ export class CardPjComponent implements OnInit {
 
   relayOn = [
     {
-      icon: 'sl-icon-target text-info-gradiant',
-      field: 'Retargeting Market',
-      fieldText: 'You can relay on our amazing features list and also our customer services will be great experience.'
+      image: '../assets/images/project/nfc.jpg',
+      title: 'NFC box',
+      fieldText: 'A box opened by Android mobile with its developed NFC application. The application can also track the usage of the box.',
+      link: '/nfc-box'
     },
     {
-      icon: 'sl-icon-mouse text-info-gradiant',
-      field: 'Fruitful Results',
-      fieldText: 'You can relay on our amazing features list and also our customer services will be great experience.'
+      image: '../assets/images/project/nfc.jpg',
+      title: 'Fruitful Results',
+      fieldText: 'You can relay on our amazing features list and also our customer services will be great experience.',
+      link: '/nfc-box'
     },
     {
-      icon: 'sl-icon-earphones-alt text-info-gradiant',
-      field: 'Instant Solutions',
-      fieldText: 'You can relay on our amazing features list and also our customer services will be great experience.'
+      image: '../assets/images/project/nfc.jpg',
+      title: 'Instant Solutions',
+      fieldText: 'You can relay on our amazing features list and also our customer services will be great experience.',
+      link: '/nfc-box'
     }
   ];
 
