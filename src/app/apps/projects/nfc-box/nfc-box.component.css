@@ -2,6 +2,15 @@
     text-align: center
 }
 .header_outer{
+    padding-top: 5%;
     margin:auto;
-    width: 70%
+    width: 65%
+}
+.header_t{
+    border-left-style: solid;
+    padding-left: 1%;
+}
+.demo_container{
+    margin:auto;
+    width: 65%
 }
