@@ -28,6 +28,8 @@ import { MatCardModule } from '@angular/material/card';
 import { CardPjComponent } from './work/card-pj/card-pj.component';
 import {MatButtonModule} from '@angular/material/button';
 import { NfcBoxComponent } from './projects/nfc-box/nfc-box.component';
+import { YouTubePlayerModule } from "@angular/youtube-player";
+
 @NgModule({
   declarations: [
     AppsComponent,
@@ -56,7 +58,8 @@ import { NfcBoxComponent } from './projects/nfc-box/nfc-box.component';
     ReactiveFormsModule,
     HttpClientModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    YouTubePlayerModule
   ],
   providers: [ServiceblogService],
 })

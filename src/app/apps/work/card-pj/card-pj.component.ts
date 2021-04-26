@@ -10,7 +10,7 @@ export class CardPjComponent implements OnInit {
   relayOn = [
     {
       image: '../assets/images/project/nfc.jpg',
-      title: 'NFC box',
+      title: 'NFC box with Raspberry Pi 4',
       fieldText: 'A box opened by Android mobile with its developed NFC application. The application can also track the usage of the box.',
       link: '/nfc-box'
     },
