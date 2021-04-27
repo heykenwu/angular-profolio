@@ -8,6 +8,7 @@ import { BlogDetailComponent } from './blog/blog-detail/blog-detail.component';
 import { ViewerComponent } from './viewer/viewer.component';
 import { FullComponent } from './layout/full/full.component';
 import { NfcBoxComponent } from './projects/nfc-box/nfc-box.component';
+import { SudokuSolverComponent } from './projects/sudoku-solver/sudoku-solver.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,7 @@ const routes: Routes = [
       { path: 'work', component: WorkComponent },
       { path: 'viewer', component: ViewerComponent },
       { path: 'nfc-box', component: NfcBoxComponent },
+      { path: 'sudoku-solver', component: SudokuSolverComponent },
     ]
   }
 ];

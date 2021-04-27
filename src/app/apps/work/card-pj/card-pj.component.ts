@@ -15,10 +15,10 @@ export class CardPjComponent implements OnInit {
       link: '/nfc-box'
     },
     {
-      image: '../assets/images/project/nfc.jpg',
-      title: 'Fruitful Results',
-      fieldText: 'You can relay on our amazing features list and also our customer services will be great experience.',
-      link: '/nfc-box'
+      image: '../assets/images/project/sudoku_logo.jfif',
+      title: 'Sudoku Solver in C++',
+      fieldText: 'A C++ program that solve the soduku using Algorithm X with dancing links',
+      link: '/sudoku-solver'
     },
     {
       image: '../assets/images/project/nfc.jpg',

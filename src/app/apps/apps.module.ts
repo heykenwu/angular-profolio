@@ -29,6 +29,7 @@ import { CardPjComponent } from './work/card-pj/card-pj.component';
 import {MatButtonModule} from '@angular/material/button';
 import { NfcBoxComponent } from './projects/nfc-box/nfc-box.component';
 import { YouTubePlayerModule } from "@angular/youtube-player";
+import { SudokuSolverComponent } from './projects/sudoku-solver/sudoku-solver.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { YouTubePlayerModule } from "@angular/youtube-player";
     ViewerComponent,
     CardPjComponent,
     NfcBoxComponent,
+    SudokuSolverComponent,
   ],
   imports: [
     CommonModule,
