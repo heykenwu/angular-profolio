@@ -25,3 +25,58 @@
     </strong>
     </h2>
 </div>
+<div class="container">
+  <h1 class="md-display-3"><strong>Algorithm Design</strong></h1>
+  <h3 class="md-headline">The algorithm design technique is the Dancing Links algorithm which is a backtracking 
+    algorithm designed for solving the exact cover problem. And Sudoku is one of the case that has
+    this problem. Dancing Links solve the Exact Cover problem by putting it into a toroidal doubly-linked list (A matrix).
+    This matrix can only track the cells for each row that correspond to meeting a constraint.
+    For the rest of the cells that are not relevant will be ignored (will not be linked). The reference I used for this exercise is <a href="https://www.ocf.berkeley.edu/~jchu/publicportal/sudoku/sudoku.paper.html#dlxExactCover">here</a>.
+    The concept image is shown below:</h3>
+    <div class="design_img_container">
+      <img class="dancing_concept" src="assets/images/project/dancing_concept.png">
+      </div>
+      <div class="caption">
+      <em>figure 1 Dancing Link concept</em>
+      </div>
+      <h3 class="md-headline">In the matrix, the column will be the constrains of the sudoku and the rows will be the entries of the cells.
+        (i.e. row 1 col 1 value 1 will be considered as one entry). In Sudoku, we will have 4 constrains for every cell:</h3>
+      <strong>
+      <ol>
+        <li>
+          <h3 class="md-headline">A single value in each cell.</h3>
+        </li>
+        <li>
+          <h3 class="md-headline">Values 1 through 9 must exist only once in each row.</h3>
+        </li>
+        <li>
+          <h3 class="md-headline">Values 1 through 9 must exist only once in each column.</h3>
+        </li>
+        <li>
+          <h3 class="md-headline">Values 1 through 9 must exist only once in each square.</h3>
+        </li>
+      </ol>
+      </strong>
+      <h3 class="md-headline">Therefore, in the toroidal doubly-linked list, 
+        for columns (constrains), we will have totally 324 constrains (9 rows x 9 columns x 4 constrains).
+        For rows (entries), we will have 729 entries (9 rows x 9 columns x 9 (values 1 to 9)).
+        The dancing links algorithm has two main functions:</h3>
+        <strong>
+        <ol>
+          <li>
+            <h3 class="md-headline"><strong>cover()</strong>: to remove a column from the matrix as well as remove all rows in the column from other columns they are in.</h3>
+          </li>
+          <li>
+            <h3 class="md-headline"><strong>uncover()</strong>: for backtracking, recover the removed column and its related bottom nodes.</h3>
+          </li>
+        </ol>
+        </strong>
+        <h3 class="md-headline">Another part that is important to solve the 0's is to choose the column with 
+          the least number of nodes to decrease the branching of the algorithm. It is a main part of the solve_the_zeros().
+          Every possible node will be passed to the stack in the solve_the_zeros(). If the node lead to a failed result,
+          it will pop out from the stack and then do a uncover for that column. 
+          When all the constrains are satisfy (Root pointer points to itself), it means that a compelete solution
+          will be stored in the stack. 
+          And then what we do is to pop the number from the stack and add each number into the puzzle 2D array.
+          If there is still a column left and no nodes under it at the end, it means there is no solution for this puzzle.</h3> 
+  </div>
