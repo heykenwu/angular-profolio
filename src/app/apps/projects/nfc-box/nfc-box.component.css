@@ -10,7 +10,18 @@
     border-left-style: solid;
     padding-left: 1%;
 }
-.demo_container{
+.container{
     margin:auto;
     width: 65%
+}
+.nfc_design{
+    width:50%;
+    height: 50%;
+}
+.design_img_container{
+    text-align: center;
+}
+.caption{
+    text-align: center;
+    padding-bottom: 5%;
 }
