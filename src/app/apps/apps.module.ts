@@ -31,6 +31,7 @@ import { NfcBoxComponent } from './projects/nfc-box/nfc-box.component';
 import { YouTubePlayerModule } from "@angular/youtube-player";
 import { SudokuSolverComponent } from './projects/sudoku-solver/sudoku-solver.component';
 import { GisComponent } from './projects/gis/gis.component';
+import { StegoComponent } from './projects/stego/stego.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { GisComponent } from './projects/gis/gis.component';
     NfcBoxComponent,
     SudokuSolverComponent,
     GisComponent,
+    StegoComponent,
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,127 @@
+<div
+  class="banner-innerpage"
+  style="background-image: url(assets/images/project/stego_banner.jpeg)"
+>
+  <div class="container">
+    <!-- Row  -->
+    <div class="row justify-content-center">
+      <!-- Column -->
+      <div class="col-lg-9 col-md-6 no-trans align-self-center text-center">
+        <h1 class="title">Steganography application in Python</h1>
+      </div>
+      <!-- Column -->
+    </div>
+    </div>
+</div>
+
+<!-- ============================================================== -->
+<!-- Feature 22  -->
+<!-- ============================================================== -->
+<div class="header_outer">
+    <h2 class="header_t md-display-1">
+    <strong >
+        Steganography is the art and science of the communicating in a way that conceals any existence of the communication of information. The technique involves concealing the actual information within a "carrier", 
+        which can be image, video, or audio file. It is implemented in a manner that prevents a third party from detecting the existence of the concealed message or file. 
+        In this project, we are going to design a simple LSB stego application written in Python. The application will be command-line , with the appropriate switches 
+        to perform the various functions.
+    </strong>
+    </h2>
+</div>
+<div class="container">
+    <h1 class="md-display-3"><strong>Approach</strong></h1>
+    <h3 class="md-headline">There are two main functions of this application.
+         First one is to encrypt the secret image by password using DES/3DES encryption and hide the bits of cipher data to the least significant bits in every R, G, B component of the cover pixels. 
+         Second one is to extracting bits from the cipher image and decrypted them by password using DES/3DES to the original data 
+         and recover the data to the original secret image. The following figures summarize the process: </h3>
+    <div class="design_img_container">
+        <img class="encryption_concept" src="assets/images/project/stego_encrypt.jpg">
+    </div>
+    <div class="caption">
+        <em>figure 1 Encryption</em>
+    </div>
+    <div class="design_img_container">
+        <img class="encryption_concept" src="assets/images/project/stego_decrypt.jpg">
+    </div>
+    <div class="caption">
+        <em>figure 2 Decryption</em>
+    </div>
+    <h1 class="md-display-3"><strong>Application Structure</strong></h1>
+    <h3 class="md-headline">Library that used in the Application (prerequisites): </h3>
+    <ul>
+        <li>
+            <h3 class="md-headline">Python des</h3>
+        </li>
+        <li>
+            <h3 class="md-headline">Python PIL</h3>
+        </li>
+    </ul>
+    <h3 class="md-headline">The application has 3 modules: <strong>dcstego.py</strong>, <strong>dcimage.py</strong> and <strong>decutils.py</strong>. 
+        They are responsible for different part of the functions of the program. </h3>
+        <ul>
+            <li>
+                <h3 class="md-headline"><strong>dcstego.py</strong>: the main functions that contains general functionality such as parsing command line arguments, check the options (encryption or decryption), check the data size and format of both cover image and secret image as well as the validation of the key. 
+                    In this module, we use ‘<strong>Argparse</strong>’, which is a recommend command line parser for python to get the information about the images from the user. </h3>
+            </li>
+            <li>
+                <h3 class="md-headline"><strong>dcimage.py</strong>: the module that contains the image processing like changing the image to the binary string or to hex values, and to manipulate the image like changing its LSB.</h3>
+            </li>
+            <li>
+                <h3 class="md-headline"><strong>decutils.py</strong>: the module will contain four functions. There are for the encryption or decryption of the header or the data of secret image.</h3>
+            </li>
+        </ul>
+    <h1 class="md-display-3"><strong> Pseudo implementation</strong></h1>
+    <div class="design_img_container">
+        <img class="sudo_concept" src="assets/images/project/sudo_dc.PNG">
+    </div>
+    <div class="caption">
+        <em>figure 3 dcstego.py</em>
+    </div>
+    <div class="design_img_container">
+        <img class="sudo_concept" src="assets/images/project/sudo_dcimage.PNG">
+    </div>
+    <div class="caption">
+        <em>figure 4 dcimage.py</em>
+    </div>
+    <div class="design_img_container">
+        <img class="sudo_concept" src="assets/images/project/decutils.PNG">
+    </div>
+    <div class="caption">
+        <em>figure 5 decutils.py</em>
+    </div>
+    <h1 class="md-display-3"><strong>State diagram</strong></h1>
+    <div class="design_img_container">
+        <img class="state_concept" src="assets/images/project/state_encryption_stego.jpg">
+    </div>
+    <div class="caption">
+        <em>figure 6 Encryption</em>
+    </div>
+    <div class="design_img_container">
+        <img class="state_concept" src="assets/images/project/state_decryption_stego.jpg">
+    </div>
+    <div class="caption">
+        <em>figure 7 Decryption</em>
+    </div>
+    <h1 class="md-display-3"><strong>Encryption used in this application:</strong></h1>
+    <h3 class="md-headline">DES/3DES are used in this application depends on the length of your key (8 chars will be DES and 16 bytes will be 3DES). Since the block size of DES is 8 bytes, the encrypted header size will be the multiple of 8. If the length of the data size can not be divisible by 8, padding will be added to the data to make the length be the multiple of 8. 
+        For example, if the size of header is 11, the output size will be 16. And the data of the encryption will be added after the encrypted header. 
+        The idea is shown below: </h3>
+        <div class="design_img_container">
+            <img class="enc_concept" src="assets/images/project/en_structure.PNG">
+        </div>
+        <div class="caption">
+            <em>figure 8 encrypted data structure</em>
+        </div>
+        <h3 class="md-headline">To get the data of the image, you need to know the data size, which in order to get it, you will need to first decrypt the header. </h3>
+        <h1 class="md-display-3"><strong>Technique to hide a pixel</strong></h1>
+        <h3 class="md-headline">In this application, 3 pixels in cover is needed for hiding 1 byte in secret image (which means 9 pixels to hide 1 pixel). The order to get the bits in 3 pixels (1 byte) is shown below:</h3>
+        <div class="design_img_container">
+            <img class="enc_concept" src="assets/images/project/hide_stego.PNG">
+        </div>
+        <div class="caption">
+            <em>figure 9 LSB implementation</em>
+        </div>
+        <h1 class="md-display-3"><strong>Usage</strong></h1>
+        <div class="design_img_container">
+            <img class="enc_concept" src="assets/images/project/usage_stego.PNG">
+        </div>
+</div>

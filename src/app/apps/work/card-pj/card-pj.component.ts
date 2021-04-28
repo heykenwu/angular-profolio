@@ -27,10 +27,10 @@ export class CardPjComponent implements OnInit {
       link: '/gis'
     },
     {
-      image: '../assets/images/project/geo_banner.jpg',
-      title: 'Geographic Information System',
-      fieldText: 'A C++ program that uses latitude and longitude, which will allow us to deal with geographic features at any location on Earth',
-      link: '/gis'
+      image: '../assets/images/project/stego_detail_banner.jpg',
+      title: 'Stego python application',
+      fieldText: 'A python program that hide and extract the secret data within an image',
+      link: '/stego'
     }
   ];
 

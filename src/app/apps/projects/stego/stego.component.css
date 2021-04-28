@@ -1,0 +1,24 @@
+.header_outer{
+    padding-top: 5%;
+    margin:auto;
+    width: 65%
+}
+.header_t{
+    border-left-style: solid;
+    padding-left: 1%;
+}
+.design_img_container{
+    text-align: center;
+}
+.caption{
+    text-align: center;
+    padding-bottom: 5%;
+}
+.state_concept{
+    width: 50%;
+    height: 50%;
+}
+.sudo_concept{
+    width: 50%;
+    height: 50%;
+}
