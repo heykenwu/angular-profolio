@@ -9,6 +9,7 @@ import { ViewerComponent } from './viewer/viewer.component';
 import { FullComponent } from './layout/full/full.component';
 import { NfcBoxComponent } from './projects/nfc-box/nfc-box.component';
 import { SudokuSolverComponent } from './projects/sudoku-solver/sudoku-solver.component';
+import { GisComponent } from './projects/gis/gis.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,7 @@ const routes: Routes = [
       { path: 'viewer', component: ViewerComponent },
       { path: 'nfc-box', component: NfcBoxComponent },
       { path: 'sudoku-solver', component: SudokuSolverComponent },
+      { path: 'gis', component: GisComponent },
     ]
   }
 ];

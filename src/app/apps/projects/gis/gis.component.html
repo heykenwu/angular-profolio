@@ -1,0 +1,58 @@
+<div
+  class="banner-innerpage"
+  style="background-image: url(assets/images/project/geo_detail_banner.jpg)"
+>
+  <div class="container">
+    <!-- Row  -->
+    <div class="row justify-content-center">
+      <!-- Column -->
+      <div class="col-lg-9 col-md-6 no-trans align-self-center text-center">
+        <h1 class="title">Geographic Information System</h1>
+      </div>
+      <!-- Column -->
+    </div>
+    </div>
+</div>
+
+<div class="header_outer">
+    <h2 class="header_t md-display-1">
+    <strong >
+        Geographic information systems organize information pertaining to geographic features and
+        provide various kinds of access to the information. A geographic feature may possess many
+        attributes. In particular, a geographic feature has a specific location. There
+        are a number of ways to specify location. For this project, we will use latitude and longitude, which will allow us to deal with geographic features at any location on Earth.
+        The GIS record files were obtained from the website for the USGS Board on Geographic Names <a href="http://geonames.usgs.gov"></a>. The file begins with a descriptive header line, followed by a sequence of GIS records, one per line.
+    </strong>
+    </h2>
+    <h1 class="md-display-3"><strong>Program structure</strong></h1>
+    <h3 class="md-headline">There are five important classes associate with the main program:</h3>
+    <ul>
+        <li>
+            <h3 class="md-headline"><strong>GISRecord</strong>: it is used to store a compete record for classes like BufferPool to use.</h3>
+          </li>
+        <li>
+            <h3 class="md-headline"><strong>CommandProcess</strong>: it mainly to execute the command.</h3>
+          </li>
+        <li>
+          <h3 class="md-headline"><strong>CoordinateIndex</strong>: it simply to implement a PR quadtree to store the coordinate of a data and its offset(s).</h3>
+        </li>
+        <li>
+          <h3 class="md-headline"><strong>BufferPool</strong>: it mainly work like a LRU cache in the program, which store up to 15 records. Every command 
+            that is for searching records (like search command WHAT_IS WHAT_IS_IN WHAT_IS_AT) will be first look 
+            at the buffer pool to see if the records are inside the pool.</h3>
+        </li>
+        <li>
+          <h3 class="md-headline"><strong>NameIndex</strong>: it simply to implement a hash table. In the hash table, it contains a string that concatenate 
+            the feature name and state alpha, and a set of its offsets. It has a elfhash to hash the string of the name 
+            and state to a unsigned int.</h3>
+        </li>
+      </ul>
+      <h3 class="md-headline">The following image is the concept of the program:</h3>
+      <div class="design_img_container">
+        <img class="gis_concept" src="assets/images/project/gis_concept.PNG">
+        </div>
+        <div class="caption">
+        <em>figure 1 GIS concept</em>
+        </div>
+        <h1 class="md-display-3"><strong>Source code</strong></h1>
+</div>

@@ -30,6 +30,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { NfcBoxComponent } from './projects/nfc-box/nfc-box.component';
 import { YouTubePlayerModule } from "@angular/youtube-player";
 import { SudokuSolverComponent } from './projects/sudoku-solver/sudoku-solver.component';
+import { GisComponent } from './projects/gis/gis.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { SudokuSolverComponent } from './projects/sudoku-solver/sudoku-solver.co
     CardPjComponent,
     NfcBoxComponent,
     SudokuSolverComponent,
+    GisComponent,
   ],
   imports: [
     CommonModule,
