@@ -25,6 +25,12 @@ export class CardPjComponent implements OnInit {
       title: 'Geographic Information System',
       fieldText: 'A C++ program that uses latitude and longitude, which will allow us to deal with geographic features at any location on Earth',
       link: '/gis'
+    },
+    {
+      image: '../assets/images/project/geo_banner.jpg',
+      title: 'Geographic Information System',
+      fieldText: 'A C++ program that uses latitude and longitude, which will allow us to deal with geographic features at any location on Earth',
+      link: '/gis'
     }
   ];
 
