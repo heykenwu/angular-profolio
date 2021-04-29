@@ -1,0 +1,62 @@
+<div
+  class="banner-innerpage"
+  style="background-image: url(assets/images/project/covert_banner_d.jpg)"
+>
+  <div class="container">
+    <!-- Row  -->
+    <div class="row justify-content-center">
+      <!-- Column -->
+      <div class="col-lg-9 col-md-6 no-trans align-self-center text-center">
+        <h1 class="title">Covert Channel Application</h1>
+      </div>
+      <!-- Column -->
+    </div>
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- Feature 22  -->
+<!-- ============================================================== -->
+<div class="header_outer">
+    <h2 class="header_t md-display-1">
+    <strong >
+        Implement a complete covert application that will allow a user to access a port (that is otherwise closed) on a firewall, communicate with a "disguised" backdoor application. 
+        The backdoor application will accept commands and execute them; the results of the command execution will be sent back to the remote client application
+    </strong>
+    </h2>
+</div>
+<div class="container">
+    <h1 class="md-display-3"><strong>Constraints</strong></h1>
+    <ul >
+        <li>
+          <h3 class="md-headline">The user must be able to select from a number of protocols (UDP, TCP, etc) and ports to carry out the penetration and exfiltration</h3>
+        </li>
+        <li>
+          <h3 class="md-headline">A README that provides a detailed user guide as part of the project submission</h3>
+        </li>
+      </ul>
+      <h1 class="md-display-3"><strong>Approach</strong></h1>
+      <h3 class="md-headline">The application consists of three components - backdoor, handler and keylogger. We will use the c library <strong>libpcap</strong> to implement both backdoor and handler. To issue a command to the backdoor, the handler will send a UDP packet to the backdoor. 
+          The payload of that packet has a predefined keyword followed by a ciphertext of the actual command to be executed on the backdoor. The key used to create the ciphertext is shared with the backdoor program.</h3>
+    <h3 class="md-headline">Network traffic capturing happens before the firewall, therefor, the backdoor will still be able to sniff the incoming packet even if 
+        there's a blocking rule in place. When the backdoor receives the UDP packet, it will check the keyword in the payload to varify that the packet is 
+        indeed from the remote client. 
+    Next, it will proceed to decrypt the encrypted command, execute the command, and send the output of the command back to the handler on the same udp port. 
+    The figures below show a high level overview of the communication process.</h3>
+    <div class="design_img_container">
+        <img class="nfc_design" src="assets/images/project/covert_bp.PNG">
+        </div>
+        <div class="caption">
+        <em>figure 1 backdoor communication process</em>
+    </div>
+    <h3 class="md-headline">The file exfiltration process will be run on a separate TCP channel. Before the process begins, the backdoor will first send a UDP packet with a predefined flag to the handler. 
+        When the handler receives the packet and verifies the flag, it will open up a firewall rule to allow the backdoor to connect back, 
+        and send back the requested file. The following system diagram illustrates the file exfiltration process.</h3>
+        <div class="design_img_container">
+            <img class="nfc_design" src="assets/images/project/covert_fp.PNG">
+            </div>
+            <div class="caption">
+            <em>figure 2 file exfiltration process</em>
+        </div>
+        <h1 class="md-display-3"><strong>Source code</strong></h1>
+        <h3 class="md-headline">The source code is <a href="https://github.com/heykenwu/covert-channel">here</a>.</h3>    
+</div>

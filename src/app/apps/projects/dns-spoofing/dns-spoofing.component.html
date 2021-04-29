@@ -1,0 +1,166 @@
+<div
+  class="banner-innerpage"
+  style="background-image: url(assets/images/project/nfc2.png)"
+>
+  <div class="container">
+    <!-- Row  -->
+    <div class="row justify-content-center">
+      <!-- Column -->
+      <div class="col-lg-9 col-md-6 no-trans align-self-center text-center">
+        <h1 class="title">DNS Spoofing Application</h1>
+      </div>
+      <!-- Column -->
+    </div>
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- Feature 22  -->
+<!-- ============================================================== -->
+<div class="header_outer">
+    <h2 class="header_t md-display-1">
+    <strong >
+        In this project, we are going to design & implement a basic DNS spoofing application
+    </strong>
+    </h2>
+</div>
+<div class="container">
+    <h1 class="md-display-3"><strong>Constraints</strong></h1>
+    <ul >
+        <li>
+          <h3 class="md-headline">
+            The application will simply sense an HTML DNS Query and respond with a crafted Response answer, which will direct the target system to specific websites (such as the attacker's web server)
+          </h3>
+        </li>
+        <li>
+            <h3 class="md-headline">
+            The application should be able to handle any arbitrary domain name string and craft a spoofed Response
+            </h3>
+        </li>
+      </ul>
+      <h1 class="md-display-3"><strong>Approach</strong></h1>
+      <h3 class="md-headline">
+        We will use the python library Scapy to implement DNS spoofing application. There will be two components in this application. One of them is responsible for running ARP poisoning. The other is responsible for sniffing/crafting DNS responses/answers. To make the application more customizable, 
+        we will have the application read the intended spoofing Domain name/IP pair from a configuration file.
+        </h3>
+        <h3 class="md-headline">
+            In order to prevent the victim's machine from receiving legitimate DNS answers, the application will impose a blocking rule on the forwarding table. Any DNS answer from the outside network destined to the victim's machine will be dropped. However, network traffic capturing happens before the firewall, therefore, the sniffing component will still be able to pick up the DNS answer before it gets dropped. After the application picks up the DNS answer, it will compare it with the domain name specified in the configuration file. If there's a match, the application will craft a spoofed DNS answer that directs the victim's browser to the attacker's web server,
+            and send the crafted DNS answer to the victim. If there's no match , the application will simply send the original DNS answer back to the victim's machine.
+            </h3>
+        <h3 class="md-headline">
+            The figures below show a high level overview of the two components:
+        </h3>
+    <div class="design_img_container">
+        <img class="design" src="assets/images/project/arp_p.PNG">
+        </div>
+        <div class="caption">
+        <em>figure 1 ARP spoofing process</em>
+        </div>
+        <div class="design_img_container">
+        <img class="design" src="assets/images/project/arp_sniff.PNG">
+        </div>
+        <div class="caption">
+        <em>figure 2 DNS sniffing/crafting</em>
+        </div>
+        <h1 class="md-display-3"><strong>Application Design</strong></h1>
+        <h3 class="md-headline">
+            <strong>Modules</strong>
+        </h3>
+        <h3 class="md-headline">
+            The application consists of four parts:
+        </h3>
+        <ul >
+            <li>
+              <h3 class="md-headline">
+                  <strong>sniff.py</strong>: an independent program. Responsible for sniffing the victim's DNS request and crafting spoofed DNS answers.
+              </h3>
+            </li>
+            <li>
+                <h3 class="md-headline">
+                    <strong>arpspoof.py</strong>: an independent program. Responsible for running ARP poisoning. Reads from config.py to determine ARP spoofing targets.
+                </h3>
+            </li>
+            <li>
+                <h3 class="md-headline">
+                    <strong>config.py</strong>: a configuration file. Has two objects - host_info and dns_host . The host_info object includes information required by <strong>sniff</strong>.py . The dns_host object is simply a list of domain names/IP pairs, which is required by the <strong>arpspoof.py</strong> . Detailed information about this config file can be found at the Usage section below.
+                </h3>
+            </li>
+            <li>
+                <h3 class="md-headline">
+                    <strong>dns_spoof.sh</strong>: application entry point. A simple bash script that runs both sniff.py and arpspoof.py in background, and waits for any user input. When a key is entered, the bash process will kill the <strong>sniff.py</strong> and <strong>arpspoof.py</strong> running in background, then exit.
+                </h3>
+            </li>
+          </ul>
+          <h1 class="md-display-3"><strong>State Diagram</strong></h1>
+          <div class="design_img_container">
+            <img class="design" src="assets/images/project/arp_sniff_st.PNG">
+            </div>
+            <div class="caption">
+            <em>figure 3 sniff.py state Diagram</em>
+            </div>
+        <div class="design_img_container">
+            <img class="design" src="assets/images/project/arp_spoof_st.PNG">
+            </div>
+            <div class="caption">
+            <em>figure 4 arpspoof.py state Diagram</em>
+            </div>  
+        <h1 class="md-display-3"><strong>Pseudo implementation</strong></h1>
+        <h3 class="md-headline">
+            <strong>sniff.py</strong>
+        </h3>
+        <div class="design_img_container">
+            <img class="design" src="assets/images/project/arp_sniff_pseudo.PNG">
+            </div>
+        <div class="design_img_container">
+            <img class="design" src="assets/images/project/arp_sniff1_pseudo.PNG">
+            </div>
+            <h3 class="md-headline">
+                <strong>arpspoof.py</strong>
+            </h3>
+            <div class="design_img_container">
+                <img class="design" src="assets/images/project/arp_arpspoof_pseudo.PNG">
+                </div>
+                <h3 class="md-headline">
+                    <strong>dns_spoof.sh</strong>
+                </h3>
+                <div class="design_img_container">
+                    <img class="design" src="assets/images/project/arp_dns_pseudo.PNG">
+                </div>
+    <h1 class="md-display-3"><strong>Usage</strong></h1>
+    <h3 class="md-headline">
+        <strong>Step 1</strong>
+    </h3>
+    <h3 class="md-headline">
+        Open the config.py, fill in the info for each key-value pair in host_info object:
+    </h3>
+    <ul >
+        <li>
+          <h3 class="md-headline">
+              <strong>victimIP</strong>: IP of the victim's machine. Must be the IP of the same network.
+          </h3>
+        </li>
+        <li>
+            <h3 class="md-headline">
+                <strong>routerIP</strong>: IP of the router in the same network. routerMAC - MAC address of the reouter in the same network victimMAC - MAC address of the victim's machine in the same network attackerMAC - 
+                MAC address of the attacker's machine in the same network Interface - name of the NIC to use.
+            </h3>
+        </li>
+      </ul>
+      <h3 class="md-headline">
+        Do the same for the dns_host object. This object includes the Domain names we want to spoof. Make sure to add a 'period' at the end of every domain name
+    </h3>
+    <div class="design_img_container">
+        <img class="design" src="assets/images/project/arp_dns_host_pseudo.PNG">
+    </div>
+    <h3 class="md-headline">
+        <strong>Step 2</strong>
+    </h3>
+    <h3 class="md-headline">
+        To start the DNS spoofing application, cd into the application folder, and simply run the bash script <strong>dns_spoof.sh</strong> . As shown in the pseudo implementation section above,
+         the scripts will automatically start bath the packets sniffing and ARP poisoning program.
+    </h3>
+    <h1 class="md-display-3"><strong>Source code</strong></h1>
+    <h3 class="md-headline">
+        The project source code is <a href="https://github.com/heykenwu/dns-spoofing">here</a>.
+    </h3>
+</div>
+

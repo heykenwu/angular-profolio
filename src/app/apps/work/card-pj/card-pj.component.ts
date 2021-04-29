@@ -37,6 +37,18 @@ export class CardPjComponent implements OnInit {
       title: 'Linux packet-sniffing application',
       fieldText: 'A C program that sniffs the packets of the victim machine',
       link: '/packet-sniffing'
+    },
+    {
+      image: '../assets/images/project/covert_banner.jpg',
+      title: 'Covert Channel Application in C',
+      fieldText: 'A complete covert application that allow a user to access a port on a firewall, communicate with a "disguised" backdoor',
+      link: '/covert-channel'
+    },
+    {
+      image: '../assets/images/project/dns_logo.jpg',
+      title: 'DNS Spoofing Application in Python',
+      fieldText: 'A basic DNS spoofing application',
+      link: '/dns-spoofing'
     }
   ];
 

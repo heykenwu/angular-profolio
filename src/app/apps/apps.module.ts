@@ -33,6 +33,8 @@ import { SudokuSolverComponent } from './projects/sudoku-solver/sudoku-solver.co
 import { GisComponent } from './projects/gis/gis.component';
 import { StegoComponent } from './projects/stego/stego.component';
 import { PacketSniffingComponent } from './projects/packet-sniffing/packet-sniffing.component';
+import { CovertChannelComponent } from './projects/covert-channel/covert-channel.component';
+import { DnsSpoofingComponent } from './projects/dns-spoofing/dns-spoofing.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +59,8 @@ import { PacketSniffingComponent } from './projects/packet-sniffing/packet-sniff
     GisComponent,
     StegoComponent,
     PacketSniffingComponent,
+    CovertChannelComponent,
+    DnsSpoofingComponent,
   ],
   imports: [
     CommonModule,
