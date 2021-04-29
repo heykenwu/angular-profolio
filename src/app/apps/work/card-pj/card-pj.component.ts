@@ -31,6 +31,12 @@ export class CardPjComponent implements OnInit {
       title: 'Stego python application',
       fieldText: 'A python program that hide and extract the secret data within an image',
       link: '/stego'
+    },
+    {
+      image: '../assets/images/project/ps_logo.jpg',
+      title: 'Linux packet-sniffing application',
+      fieldText: 'A C program that sniffs the packets of the victim machine',
+      link: '/packet-sniffing'
     }
   ];
 

@@ -32,6 +32,7 @@ import { YouTubePlayerModule } from "@angular/youtube-player";
 import { SudokuSolverComponent } from './projects/sudoku-solver/sudoku-solver.component';
 import { GisComponent } from './projects/gis/gis.component';
 import { StegoComponent } from './projects/stego/stego.component';
+import { PacketSniffingComponent } from './projects/packet-sniffing/packet-sniffing.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { StegoComponent } from './projects/stego/stego.component';
     SudokuSolverComponent,
     GisComponent,
     StegoComponent,
+    PacketSniffingComponent,
   ],
   imports: [
     CommonModule,

@@ -11,6 +11,7 @@ import { NfcBoxComponent } from './projects/nfc-box/nfc-box.component';
 import { SudokuSolverComponent } from './projects/sudoku-solver/sudoku-solver.component';
 import { GisComponent } from './projects/gis/gis.component';
 import { StegoComponent } from './projects/stego/stego.component';
+import { PacketSniffingComponent } from './projects/packet-sniffing/packet-sniffing.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,7 @@ const routes: Routes = [
       { path: 'sudoku-solver', component: SudokuSolverComponent },
       { path: 'gis', component: GisComponent },
       { path: 'stego', component: StegoComponent },
+      { path: 'packet-sniffing', component: PacketSniffingComponent},
     ]
   }
 ];
