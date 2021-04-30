@@ -36,6 +36,7 @@ import { PacketSniffingComponent } from './projects/packet-sniffing/packet-sniff
 import { CovertChannelComponent } from './projects/covert-channel/covert-channel.component';
 import { DnsSpoofingComponent } from './projects/dns-spoofing/dns-spoofing.component';
 import { PortForwarderComponent } from './projects/port-forwarder/port-forwarder.component';
+import { EpollSelectComponent } from './projects/epoll-select/epoll-select.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { PortForwarderComponent } from './projects/port-forwarder/port-forwarder
     CovertChannelComponent,
     DnsSpoofingComponent,
     PortForwarderComponent,
+    EpollSelectComponent,
   ],
   imports: [
     CommonModule,

@@ -15,6 +15,7 @@ import { PacketSniffingComponent } from './projects/packet-sniffing/packet-sniff
 import { CovertChannelComponent } from './projects/covert-channel/covert-channel.component';
 import { DnsSpoofingComponent } from './projects/dns-spoofing/dns-spoofing.component';
 import { PortForwarderComponent } from './projects/port-forwarder/port-forwarder.component';
+import { EpollSelectComponent } from './projects/epoll-select/epoll-select.component';
 
 const routes: Routes = [
   {
@@ -31,9 +32,10 @@ const routes: Routes = [
       { path: 'gis', component: GisComponent },
       { path: 'stego', component: StegoComponent },
       { path: 'packet-sniffing', component: PacketSniffingComponent},
-      {path: 'covert-channel', component: CovertChannelComponent},
-      {path: 'dns-spoofing', component:DnsSpoofingComponent},
-      {path: 'port-forwarder', component:PortForwarderComponent},
+      { path: 'covert-channel', component: CovertChannelComponent},
+      { path: 'dns-spoofing', component:DnsSpoofingComponent},
+      { path: 'port-forwarder', component:PortForwarderComponent},
+      { path: 'epoll-select', component:EpollSelectComponent},
     ]
   }
 ];

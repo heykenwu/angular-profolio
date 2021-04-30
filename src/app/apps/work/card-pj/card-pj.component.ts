@@ -55,6 +55,12 @@ export class CardPjComponent implements OnInit {
       title: 'Port Forwarder in C',
       fieldText: 'A network application that uses advanced TCP/IP programming techniques, and implement a "Port Forwarder"',
       link: '/port-forwarder'
+    },
+    {
+      image: '../assets/images/project/epoll_logo.jpg',
+      title: 'Comparison between epoll and select server',
+      fieldText: 'compare the scalability and performance of the select and epoll-based client server implementations',
+      link: '/epoll-select'
     }
   ];
 
