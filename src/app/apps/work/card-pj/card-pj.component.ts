@@ -49,6 +49,12 @@ export class CardPjComponent implements OnInit {
       title: 'DNS Spoofing Application in Python',
       fieldText: 'A basic DNS spoofing application',
       link: '/dns-spoofing'
+    },
+    {
+      image: '../assets/images/project/portfor_banner.webp',
+      title: 'Port Forwarder in C',
+      fieldText: 'A network application that uses advanced TCP/IP programming techniques, and implement a "Port Forwarder"',
+      link: '/port-forwarder'
     }
   ];
 

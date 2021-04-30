@@ -14,6 +14,7 @@ import { StegoComponent } from './projects/stego/stego.component';
 import { PacketSniffingComponent } from './projects/packet-sniffing/packet-sniffing.component';
 import { CovertChannelComponent } from './projects/covert-channel/covert-channel.component';
 import { DnsSpoofingComponent } from './projects/dns-spoofing/dns-spoofing.component';
+import { PortForwarderComponent } from './projects/port-forwarder/port-forwarder.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,7 @@ const routes: Routes = [
       { path: 'packet-sniffing', component: PacketSniffingComponent},
       {path: 'covert-channel', component: CovertChannelComponent},
       {path: 'dns-spoofing', component:DnsSpoofingComponent},
+      {path: 'port-forwarder', component:PortForwarderComponent},
     ]
   }
 ];

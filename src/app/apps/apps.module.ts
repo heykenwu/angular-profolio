@@ -35,6 +35,7 @@ import { StegoComponent } from './projects/stego/stego.component';
 import { PacketSniffingComponent } from './projects/packet-sniffing/packet-sniffing.component';
 import { CovertChannelComponent } from './projects/covert-channel/covert-channel.component';
 import { DnsSpoofingComponent } from './projects/dns-spoofing/dns-spoofing.component';
+import { PortForwarderComponent } from './projects/port-forwarder/port-forwarder.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { DnsSpoofingComponent } from './projects/dns-spoofing/dns-spoofing.compo
     PacketSniffingComponent,
     CovertChannelComponent,
     DnsSpoofingComponent,
+    PortForwarderComponent,
   ],
   imports: [
     CommonModule,
