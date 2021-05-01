@@ -1,0 +1,14 @@
+.main_container {
+    padding-top: 5%;
+    margin:auto;
+    width: 50%
+}
+.a_row{
+    display: flex;
+}
+.left_child{
+    flex: 1;
+}
+.right_child{
+    flex: 2;
+}
