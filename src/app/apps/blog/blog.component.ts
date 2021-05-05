@@ -11,7 +11,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class BlogComponent implements OnInit {
   blogsDetail: Blog[] = [];
-
+  swim:string[] = ["SWIMMING","Swimming is normal for me. I'm relaxed. I'm comfortable, and I know my surroundings. It's my home.","assets/images/innerpage/swimming.jpg"]
+  hiking:string[] = ["HIKING","Everyone wants to live on top of the mountain, but all the happiness and growth occurs while you are climbing it.","assets/images/innerpage/hiking.jpg"]
+  movie:string[] = ["WATCHING MOVIES","'Everything I learned I learned from the movies.' - Audrey Hepburn","assets/images/innerpage/movie.jfif"]
+  music:string[] = ["MUSIC","When I hear music, I fear no danger. I am invulnerable. I see no foe. I am related to the earliest times, and to the latest.","assets/images/innerpage/music.png"]
+  
   constructor(
     public service: ServiceblogService,
     public router: Router,

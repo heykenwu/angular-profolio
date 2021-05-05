@@ -8,17 +8,11 @@
       <!-- Column -->
       <div class="col-lg-12 col-md-6 align-self-center text-center no-trans">
         <h1 class="title">Welcome to Ken's World</h1>
-        <h5 class="subtitle op-5">
-          Want a blog app with ng-bootstrap ? Here is the fully workable blog
-          app in which we are giving add post, edit post and delete post.
-        </h5>
-
-        <a
-          href="https://www.wrappixel.com/free-wrapkit-angular-blog"
+        <!-- <a
+          href="/about"
           class="btn btn-md m-t-30 btn-success-gradiant font-14"
           target="blank"
-          >Download Free</a
-        >
+          >Know more about me !</a> -->
       </div>
       <!-- Column -->
     </div>
@@ -68,8 +62,15 @@
       </div>
     </div>
   </div> //-->
-  <app-blog-features></app-blog-features>
-  <app-blog-features-right></app-blog-features-right>
-  <app-blog-features></app-blog-features>
-  <app-blog-features-right></app-blog-features-right>
+  <app-blog-features [title]="swim"></app-blog-features>
+  <app-blog-features-right [title] = "movie"></app-blog-features-right>
+  <app-blog-features [title]="hiking"></app-blog-features>
+  <app-blog-features-right [title]="music"></app-blog-features-right>
+  <div class="col-lg-12 col-md-6 align-self-center text-center no-trans">
+  <a
+  href="/about"
+  class="btn btn-md m-t-30 btn-success-gradiant font-14"
+  target="blank"
+  >Know more about me !</a>
+  </div>
 </div>

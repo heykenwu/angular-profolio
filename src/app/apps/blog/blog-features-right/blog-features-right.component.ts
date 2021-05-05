@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 
 @Component({
   selector: 'app-blog-features-right',
@@ -7,8 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogFeaturesRightComponent implements OnInit {
 
-  imagePath='../assets/images/innerpage/about-us.jpg';
-
+  @Input() title: any;
   constructor() { }
 
   ngOnInit(): void {

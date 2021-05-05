@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 import { ServiceblogService } from '../blog/blog-service.service';
 @Component({
   selector: 'app-viewer',
@@ -7,6 +8,12 @@ import { ServiceblogService } from '../blog/blog-service.service';
 })
 export class ViewerComponent implements OnInit {
 
+  profileForm = new FormGroup({
+    firstName: new FormControl(''),
+    email_: new FormControl(''),
+    question: new FormControl(''),
+  });
+
   constructor(public service:ServiceblogService) {
     this.service.showEdit=false;
   }
@@ -14,4 +21,7 @@ export class ViewerComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSubmit() {
+    
+  }
 }

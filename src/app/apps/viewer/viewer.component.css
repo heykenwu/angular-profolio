@@ -1,0 +1,18 @@
+.main_container {
+    padding-top: 5%;
+    margin:auto;
+    width: 50%;
+}
+mat-form-field{
+    display: block;
+}
+.center_{
+    text-align: center;
+}
+.buttonblock{
+    padding-bottom: 5%;
+}
+
+input{
+    color: #000000;
+}

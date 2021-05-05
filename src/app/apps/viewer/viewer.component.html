@@ -1,1 +1,56 @@
-<p>viewer works!</p>
+<div
+  class="banner-innerpage"
+  style="background-image: url(assets/images/landingpage/contact.jfif)"
+>
+<div class="container">
+    <!-- Row  -->
+    <div class="row justify-content-center">
+      <!-- Column -->
+      <div class="col-lg-9 col-md-6 no-trans align-self-center text-center">
+        <h1 class="title">CONTACT PAGE</h1>
+      </div>
+      <!-- Column -->
+    </div>
+  </div>
+</div>
+<div class="main_container">
+    <form [formGroup]="profileForm">
+<!--   
+        <label>
+          First Name:
+          <input type="text" formControlName="firstName">
+        </label>
+      
+        <label>
+          Email:
+          <input type="text" formControlName="email_">
+        </label>
+        <label>
+        Question:
+            <input type="text" formControlName="email_">
+          </label>
+          <button (click)="onSubmit()">Submit</button> -->
+          <div class="center_">
+            <h1>Contact me</h1>
+            <h3><em>You can contact me via the form or social media</em></h3>
+          </div>
+          <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Enter your name" formControlName="firstName">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Enter your email" formControlName="email_">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Question</mat-label>
+            <input matInput placeholder="Question you want to ask" formControlName="question">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          </mat-form-field>
+          <div class="center_ buttonblock">
+            <button mat-raised-button color="primary" (click)="onSubmit()">Submit</button>
+          </div>
+      </form>
+</div>
